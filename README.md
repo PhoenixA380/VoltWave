@@ -41,7 +41,7 @@
    ```
    Run the application using:
    ```bash
-   java -cp bin electricity.billing.system.main_class
+   java -cp bin electricity.billing.system.MainClass
    ```
 
 ## Dependencies

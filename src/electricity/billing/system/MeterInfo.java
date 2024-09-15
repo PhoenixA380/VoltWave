@@ -5,13 +5,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class meterInfo extends JFrame implements ActionListener {
+public class MeterInfo extends JFrame implements ActionListener {
 
     Choice meterLocCho, meterTypeCho, phaseCodeCho, billTypeCho;
     JButton submit;
     String meterNumber;
 
-    meterInfo(String meterNumber) {
+    MeterInfo(String meterNumber) {
         this.meterNumber = meterNumber;
 
         JPanel panel = new JPanel(null);
@@ -116,7 +116,7 @@ public class meterInfo extends JFrame implements ActionListener {
 
             String query_meterInfo = "INSERT INTO meter_info VALUES ('" + smeterNum + "','" + smeterLoc + "','" + smeterTyp + "','" + sphaseCode + "','" + sbillTyp + "','" + sday + "')";
             try {
-                database c = new database(); // Assuming Database is your database class
+                Database c = new Database(); // Assuming Database is your database class
                 c.getStatement().executeUpdate(query_meterInfo);
 
                 JOptionPane.showMessageDialog(null, "Meter Information Submitted Successfully");
@@ -132,6 +132,6 @@ public class meterInfo extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new meterInfo("");
+        new MeterInfo("");
     }
 }

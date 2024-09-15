@@ -5,12 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class database {
-    private static database instance;
+public class Database {
+    private static Database instance;
     private Connection connection;
     private Statement statement;
 
-    public database() {
+    public Database() {
         try {
             String url = "jdbc:mysql://localhost:3306/billing";
             String user = "root";
@@ -23,9 +23,9 @@ public class database {
         }
     }
 
-    public static database getInstance() {
+    public static Database getInstance() {
         if (instance == null) {
-            instance = new database();
+            instance = new Database();
         }
         return instance;
     }

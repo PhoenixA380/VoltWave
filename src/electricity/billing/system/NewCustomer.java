@@ -6,14 +6,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-public class newCustomer extends JFrame implements ActionListener {
+public class NewCustomer extends JFrame implements ActionListener {
 
     JLabel heading, customerName, meterNum, address, city, state, email, phone;
     JButton next, cancel;
     JTextField nameText, addressText, cityText, stateText, emailText, phoneText;
     JLabel meterNumberLabel;
 
-    newCustomer() {
+    NewCustomer() {
         super("New Customer");
         setSize(700, 500);
         setLocationRelativeTo(null); // Center the frame on screen
@@ -126,13 +126,13 @@ public class newCustomer extends JFrame implements ActionListener {
             String querySignup = "INSERT INTO Signup VALUES('" + smeter + "','','" + sname + "','','')";
 
             try {
-                database c = new database();
+                Database c = new Database();
                 c.getStatement().executeUpdate(queryCustomer);
                 c.getStatement().executeUpdate(querySignup);
 
                 JOptionPane.showMessageDialog(null, "Customer details added successfully");
                 setVisible(false);
-                new meterInfo(smeter); // Open meter information entry after customer details
+                new MeterInfo(smeter); // Open meter information entry after customer details
 
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -150,6 +150,6 @@ public class newCustomer extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new newCustomer();
+        new NewCustomer();
     }
 }
